@@ -1,24 +1,20 @@
-class Student:
-    def __init__(self, name, roll_number, cgpa):
-        self.name = name
-        self.roll_number = roll_number
-        self.cgpa = cgpa
-def sort_students(student_list):
-    sorted_students = sorted(student_list, key=lambda student: student.cgpa, reverse=True)
-    return sorted_students
+"""Implement a class called Player that represents a cricket player. The Player class should have a method called play() which prints "The player is playing cricket. Derive two classes, Batsman and Bowler, from the Player class. Override the play() method in each derived class to print "The batsman is batting" and "The bowler is bowling", respectively. Write a program to create objects of both the Batsman and Bowler classes and call the play() method for each object. """
+class Player:
+    def play(self):
+        print("The player is playing cricket")
 
+class Batsman(Player):
+    def play(self):
+        print("The batsman is batting")
 
-# Sample list of student objects
-students = [
-    Student("Alice", "A101", 3.8),
-    Student("Bob", "B102", 3.9),
-    Student("Charlie", "C103", 3.7),
-    Student("David", "D104", 3.95),
-]
+class Bowler(Player):
+    def play(self):
+        print("The bowler is bowling")
 
-# Sort the students by CGPA
-sorted_students = sort_students(students)
+# Create objects of Batsman and Bowler classes
+batsman = Batsman()
+bowler = Bowler()
 
-# Print the sorted list of students
-for student in sorted_students:
-    print(f"Name: {student.name}, Roll Number: {student.roll_number}, CGPA: {student.cgpa}")
+# Call the play() method for each object
+batsman.play()
+bowler.play()
